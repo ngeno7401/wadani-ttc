@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { GraduationCap, User, Building, Gem, BookOpen, Users, Heart, Award, Globe, Star, ChevronRight, MapPin, Target, Eye, Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -433,7 +434,9 @@ const Home = () => {
     zIndex: 2,
     textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
   }}>
-    Apply Now
+<li>
+  <Link to="/apply">Apply Now</Link>
+</li>
   </span>
   <ChevronRight style={{ 
     width: '20px', 
@@ -468,7 +471,19 @@ const Home = () => {
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
-                <span>Learn More</span>
+
+                <Link to="/programs" style={{ textDecoration: 'none' }}>
+  <button
+    onMouseLeave={(e) => {
+      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+      e.currentTarget.style.transform = 'translateY(0)';
+    }}
+    style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '10px', borderRadius: '8px', background: 'rgba(255,255,255,0.2)', color: '#fff' }}
+  >
+    <span>Learn More</span>
+  </button>
+</Link>
+
                 <BookOpen style={{ width: '20px', height: '20px' }} />
               </button>
             </div>
